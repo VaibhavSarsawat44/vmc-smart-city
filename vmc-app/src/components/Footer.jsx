@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Twitter, Facebook, Instagram, Landmark } from 'lucide-react';
+import { Heart, Globe, Facebook, Instagram, Landmark } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="footer-social">
                         <h4>Connect With Us</h4>
                         <div className="social-icons">
-                            <a href="#" className="social-icon"><Twitter size={20} /></a>
+                            <a href="#" className="social-icon"><Globe size={20} /></a>
                             <a href="#" className="social-icon"><Facebook size={20} /></a>
                             <a href="#" className="social-icon"><Instagram size={20} /></a>
                         </div>
