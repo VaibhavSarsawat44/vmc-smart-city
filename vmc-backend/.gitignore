@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment (contains DB credentials)
+.env
+
+# Uploads (user-submitted photos)
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

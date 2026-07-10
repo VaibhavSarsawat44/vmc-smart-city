@@ -1,0 +1,32 @@
+vmc-app/
+├── public/                 # Static assets that don't need processing
+│   ├── garbage.png         # Image for the garbage card
+│   ├── hero-bg.png         # Background image for the hero section
+│   ├── light.png           # Image for the street light card
+│   ├── logo.png            # The VMC logo used as favicon
+│   └── pothole.png         # Image for the pothole card
+│
+├── index.html              # Main HTML entry point, links to main.jsx
+├── package.json            # Project metadata and dependencies (React, Vite, react-router-dom, lucide-react)
+│
+└── src/                    # Source code folder
+    ├── main.jsx            # React root rendering file, imports App.jsx
+    ├── index.css           # Global variables (colors, fonts) and base styles
+    ├── App.jsx             # Main application component & Router configuration
+    ├── App.css             # High-level layouts and animations
+    │
+    └── components/         # Reusable React components and their specific styles
+        ├── AdminDashboard.jsx  # Protected admin panel
+        ├── AdminDashboard.css
+        ├── Footer.jsx          # Page footer with links and social icons
+        ├── Footer.css
+        ├── HeroSection.jsx     # Top landing section with the typewriter animation
+        ├── HeroSection.css
+        ├── IssueCards.jsx      # The three main problem reporting cards
+        ├── IssueCards.css
+        ├── Login.jsx           # Login screen for admin access
+        ├── Login.css
+        ├── Navbar.jsx          # Top navigation bar
+        ├── Navbar.css
+        ├── ReportIssue.jsx     # The dedicated form page for submitting an issue
+        └── ReportIssue.css

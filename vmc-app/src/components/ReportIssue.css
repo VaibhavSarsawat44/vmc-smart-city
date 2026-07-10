@@ -1,0 +1,444 @@
+.report-page-container {
+    min-height: 100vh;
+    padding: 7rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.flex-center {
+    justify-content: center;
+    padding-top: 0;
+}
+
+.report-header {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.back-btn {
+    position: fixed;
+    left: 2rem;
+    top: 2rem;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-4px);
+}
+
+.form-container {
+    width: 100%;
+    max-width: 660px;
+    padding: 2.5rem;
+    border-radius: 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+/* ── Map Styles ── */
+.map-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.map-wrapper {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.map-wrapper:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.report-map {
+    height: 320px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Override leaflet z-index inside glass panel */
+.leaflet-pane {
+    z-index: 1 !important;
+}
+.leaflet-top,
+.leaflet-bottom {
+    z-index: 2 !important;
+}
+
+.get-location-btn {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.get-location-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.selected-location-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 10px;
+    font-size: 0.82rem;
+    color: var(--secondary, #10b981);
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.selected-location-badge svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ── Other Inputs ── */
+.input-with-icon {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.glass-input.with-icon {
+    padding-left: 2.75rem;
+}
+
+.resize-none {
+    resize: none;
+}
+
+.upload-area {
+    padding: 2rem;
+    border: 2px dashed rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-area:hover {
+    border-color: var(--secondary) !important;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.file-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    justify-content: center;
+}
+
+.submit-error {
+    margin-top: 0.75rem;
+    padding: 0.7rem 1rem;
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    border-radius: 10px;
+    color: #f87171;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+/* ── Success Card ── */
+.success-card {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.success-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    border: 2px solid var(--secondary);
+}
+
+.success-icon {
+    color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .report-page-container {
+        padding-top: 6rem;
+    }
+
+    .back-btn {
+        left: 1rem;
+        top: 1rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .back-btn:hover {
+        transform: translateX(-2px);
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .report-map {
+        height: 240px;
+    }
+}
+
+/* ── Upload Buttons ── */
+.upload-btns {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ── Camera Modal ── */
+.camera-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: fadeIn 0.2s ease;
+}
+
+.camera-modal {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem 1.5rem;
+    background: rgba(15, 15, 30, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.camera-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+}
+
+.camera-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-main);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.camera-close-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Viewfinder */
+.camera-viewfinder-wrapper,
+.camera-preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.camera-video {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: 340px;
+    background: #000;
+    display: block;
+}
+
+.camera-preview-img {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 340px;
+    object-fit: cover;
+}
+
+.camera-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Snap shutter button */
+.snap-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.2s;
+    flex-shrink: 0;
+}
+
+.snap-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.08);
+}
+
+.snap-btn:active {
+    transform: scale(0.93);
+}
+
+.snap-inner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.camera-error {
+    text-align: center;
+    padding: 1.5rem;
+    color: #f87171;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ── Photo Preview (in form) ── */
+.photo-preview-wrapper {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.photo-preview {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-preview-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-remove {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    background: rgba(248, 113, 113, 0.1);
+    color: #f87171;
+    transition: all 0.2s;
+}
+
+.btn-remove:hover {
+    background: rgba(248, 113, 113, 0.2);
+    border-color: #f87171;
+}
+
+@media (max-width: 480px) {
+    .snap-btn { width: 54px; height: 54px; }
+    .snap-inner { width: 40px; height: 40px; }
+    .camera-modal { padding: 1.25rem 1rem 1rem; }
+    .upload-btns { flex-direction: column; align-items: stretch; }
+}
